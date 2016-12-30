@@ -1,12 +1,8 @@
-# == Class: snmpd::authtrapenable
-#
 # Whether or not to generate authentication failure traps.
 #
-# See snmpd.conf(5) - 'ACTIVE MONITORING > Notification Handling' for details.
+# @see snmpd.conf(5) - 'ACTIVE MONITORING > Notification Handling' for details.
 #
-# == Parameters
-#
-# [*enable*]
+# @param enable
 #   The value to assign to authtrapenable.
 #   Set to 2 -> disabled by default.
 #

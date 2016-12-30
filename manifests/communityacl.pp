@@ -1,36 +1,30 @@
-# == Define: snmpd::communityacl
-#
 # Set up the following variables in snmpd.conf:
 # * rocommunity
 # * rwcommunity
 # * rocommunity6
 # * rwcommunity6
 #
-# See the 'Traditional Access Control' segment of snmpd.conf(5) for details.
+# @see the 'Traditional Access Control' segment of snmpd.conf(5) for details.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   This becomes part of the temp file path. Do not use '/' in $name.
 #
-# [*community*]
+# @param community
 #     The COMMUNITY portion of the option string.
 #
-# [*ro*]
+# @param ro
 #   Whether or not this is a read-only community.
 #
-# [*source*]
+# @param source
 #   The SOURCE portion of the option string.
 #
-# [*oid*]
+# @param oid
 #   The OID portion of the option string.
 #
-# [*ipv6*]
+# @param ipv6
 #   Whether or not this is an ipv6 community.
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::communityacl (
   $community,

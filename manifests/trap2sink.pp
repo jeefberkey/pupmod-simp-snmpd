@@ -1,20 +1,14 @@
-# == Define: snmpd::trap2sink
-#
-# See the 'Notification Handling' section of snmpd.conf(5) for details.
+# @see the 'Notification Handling' section of snmpd.conf(5) for details.
 #
 # $name must be unique between trapsink, trap2sink, and informsink.
 #
-# == Parameters
-#
-# [*$name*]
+# @param $name
 #   Becomes HOST in the man page.
 #
-# [*community*]
-# [*port*]
+# @param community
+# @param port
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::trap2sink (
   $community = '',

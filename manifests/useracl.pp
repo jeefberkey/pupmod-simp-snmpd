@@ -1,29 +1,23 @@
-# == Define: snmpd::useracl
-#
 # Assign access controls
 #
-# See snmpd.conf(5) 'Traditional Access Control' for more detail.
+# @see snmpd.conf(5) 'Traditional Access Control' for more detail.
 #
 # $name must be unique between trapsink, trap2sink, and informsink.
 #
 # This define shares its template with communityacl.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   Not used, but should be unique.  This is so that a single user can be
 #   assigned to multiple OIDs.
 #
-# [*user*]
-# [*ro*]
+# @param user
+# @param ro
 #   Set to false to create a read/write user.
 #
-# [*sec_lvl*]
-# [*oid*]
+# @param sec_lvl
+# @param oid
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::useracl (
   $user,

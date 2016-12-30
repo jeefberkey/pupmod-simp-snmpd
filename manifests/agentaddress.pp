@@ -1,31 +1,25 @@
-# == Define: snmpd::agentaddress
-#
 # Add an agent address and the associated iptables accesses.
 #
 # You need to have previously included iptables somewhere for that portion to
 # be active.
 #
-# See snmpd.conf(5) - 'AGENT BEHAVIOUR' for details.
+# @see snmpd.conf(5) - 'AGENT BEHAVIOUR' for details.
 #
 # If you set addr_type to 'agentX', then this will enable an agentXSocket at
 # this transport address.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   This becomes part of the temp file path. Do not use '/' in $name.
 #
-# [*addr_type*]
-# [*transport_specifier*]
-# [*transport_address*]
-# [*transport_port*]
-# [*trusted_nets*]
+# @param addr_type
+# @param transport_specifier
+# @param transport_address
+# @param transport_port
+# @param trusted_nets
 #   The address range(s) to allow connections from.
 #   Follows the syntax accepted by the iptables module.
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::agentaddress (
   $addr_type           = 'agentaddress',

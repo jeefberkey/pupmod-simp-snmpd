@@ -1,23 +1,17 @@
-# == Define: snmpd::createuser
-#
 # Add the ability to create a user.
 #
-# See the 'SNMPv3 Users' section of snmpd.conf(5) for details.
+# @see the 'SNMPv3 Users' section of snmpd.conf(5) for details.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   The username applied into the system.
 #
-#  [*auth_phrase*]
-#  [*priv_phrase*]
-#  [*auth_type*]
-#  [*priv_type*]
-#  [*engine_id*]
+# @param auth_phrase
+# @param priv_phrase
+# @param auth_type
+# @param priv_type
+# @param engine_id
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::createuser (
   $auth_phrase,

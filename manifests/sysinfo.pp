@@ -1,19 +1,13 @@
-# == Class: snmpd::sysinfo
-#
 # Set system information.
 #
-# == Parameters
+# @param sys_location
+# @param sys_contact
+# @param sys_name
+# @param sys_services
+# @param sys_descr
+# @param sys_object_id
 #
-# [*sys_location*]
-# [*sys_contact*]
-# [*sys_name*]
-# [*sys_services*]
-# [*sys_descr*]
-# [*sys_object_id*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::sysinfo (
   $sys_location = '',

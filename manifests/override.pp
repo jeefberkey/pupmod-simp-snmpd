@@ -1,22 +1,16 @@
-# == Define: snmpd::override
-#
-# See the 'OTHER CONFIGURATION' section of snmpd.conf(5) for details.
+# @see the 'OTHER CONFIGURATION' section of snmpd.conf(5) for details.
 #
 # Allows you to override a particular OID with a different value.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   Becomes part of the temp file path. Do not use '/' as part of $name.
-# [*oid*]
-# [*or_type*]
-# [*value*]
-# [*rw*]
+# @param oid
+# @param or_type
+# @param value
+# @param rw
 #   If set to true, will set the -rw flag on the override option.
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::override (
   $oid,

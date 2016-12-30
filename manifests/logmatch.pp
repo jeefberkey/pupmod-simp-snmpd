@@ -1,21 +1,15 @@
-# == Define: snmpd::logmatch
-#
-# See the 'Log File Monitoring' section of snmpd.conf(5) for details.
+# @see the 'Log File Monitoring' section of snmpd.conf(5) for details.
 #
 # You'll probably want to put your regex in single quotes.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   Maps to NAME from the man page.
 #
-# [*file_path*]
-# [*cycle_time*]
-# [*regex*]
+# @param file_path
+# @param cycle_time
+# @param regex
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::logmatch (
   $file_path,

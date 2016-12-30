@@ -1,15 +1,9 @@
-# == Class: snmpd::utils
-#
 # Set up the framework and clients for the SNMP utilities.
 # This can be used without the server, but it isn't very common.
 #
-# See snmpcmd(1) for additional details.
+# @see snmpcmd(1) for additional details.
 #
-# == Parameters
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::utils (
   $rsync_source  = "snmp_${::environment}/mibs",

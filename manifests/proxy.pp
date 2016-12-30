@@ -1,18 +1,12 @@
-# == Define: snmpd::proxy
+# @see the 'Proxy Support' section of snmpd.conf(5) for details.
 #
-# See the 'Proxy Support' section of snmpd.conf(5) for details.
+# @param host
+# @param oid
+# @param context_name
+# @param snmpcmd_args
+# @param remote_oid
 #
-# == Parameters
-#
-# [*host*]
-# [*oid*]
-# [*context_name*]
-# [*snmpcmd_args*]
-# [*remote_oid*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::proxy (
   $host,

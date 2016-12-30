@@ -1,20 +1,14 @@
-# == Class: snmpd
-#
 # Configure the SNMP Daemon.
 #
 # This class, and the associated defines, should provide relatively
 # comprehensive coverage of the snmpd features.
 #
-# See snmpd(8) and snmpd.conf(5) for additional details.
+# @see snmpd(8) and snmpd.conf(5) for additional details.
 #
-# == Parameters
+# @param rsync_server
+# @param rsync_timeout
 #
-# [*rsync_server*]
-# [*rsync_timeout*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd (
   $rsync_source                   = "snmp_${::environment}/dlmod",

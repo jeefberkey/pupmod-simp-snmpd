@@ -1,22 +1,16 @@
-# == Define: snmpd::informsink
-#
 # Add the ability to create a user.
 #
-# See the 'Notification Handling' section of snmpd.conf(5) for details.
+# @see the 'Notification Handling' section of snmpd.conf(5) for details.
 #
 # $name must be unique between trapsink, trap2sink, and informsink.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   Translates to HOST from the man page entry.
 #
-# [*community*]
-# [*port*]
+# @param community
+# @param port
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::informsink (
   $community = '',

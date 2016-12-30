@@ -1,16 +1,10 @@
-# == Class: snmpd::load
+# @see snmpd.conf(5) 'System Load Monitoring' for additional information.
 #
-# See snmpd.conf(5) 'System Load Monitoring' for additional information.
+# @param max1
+# @param max5
+# @param max15
 #
-# == Parameters
-#
-# [*max1*]
-# [*max5*]
-# [*max15*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::load (
   $max1,

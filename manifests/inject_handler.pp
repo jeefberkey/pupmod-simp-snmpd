@@ -1,18 +1,12 @@
-# == Define: snmpd::inject_handler
+# @see the 'OTHER CONFIGURATION' section of snmpd.conf(5) for details.
 #
-# See the 'OTHER CONFIGURATION' section of snmpd.conf(5) for details.
-#
-# == Parameters
-#
-# [*name*]
+# @param name
 #   Translates to HOST from the man page entry.
 #
-# [*handler_type*]
+# @param handler_type
 #   May be one of: stash_cache, debug, read_only, serialize, or bulk_to_next
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::inject_handler (
   $handler_type,

@@ -1,16 +1,10 @@
-# == Define: snmpd::trapsess
+# @see the 'Notification Handling' section of snmpd.conf(5) for details.
 #
-# See the 'Notification Handling' section of snmpd.conf(5) for details.
-#
-# == Parameters
-#
-# [*name*]
+# @param name
 #     Becomes HOST in the man page.
-# [*snmpcmd_args*]
+# @param snmpcmd_args
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::trapsess (
   $snmpcmd_args = ''

@@ -1,20 +1,14 @@
-# == Define: snmpd::interface
-#
 # Provide interface type and speed settings.
 #
-# See snmpd.conf(5) 'Interfaces Group' for additional information.
+# @see snmpd.conf(5) 'Interfaces Group' for additional information.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   Maps to NAME in the man page.
 #
-# [*type*]
-# [*speed*]
+# @param type
+# @param speed
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::interface (
   $type,

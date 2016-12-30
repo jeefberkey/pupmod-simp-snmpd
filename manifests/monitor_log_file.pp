@@ -1,21 +1,15 @@
-# == Define: snmpd::monitor_log_file
-#
 # This define sets up the 'file' option of the Log File Monitoring section of
 # snmpd.conf.
 #
-# See snmpd.conf(5) 'Log File Monitoring' for more information.
+# @see snmpd.conf(5) 'Log File Monitoring' for more information.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   Becomes part of the temp file path. Do not make '/' part of $name!
 #
-# [*file_path*]
-# [*max_size*]
+# @param file_path
+# @param max_size
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::monitor_log_file (
   $file_path,

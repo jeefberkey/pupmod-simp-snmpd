@@ -1,15 +1,9 @@
-# == Define: snmpd::trapcommunity
+# @see the 'Notification Handling' section of snmpd.conf(5) for details.
 #
-# See the 'Notification Handling' section of snmpd.conf(5) for details.
-#
-# == Parameters
-#
-# [*name*]
+# @param name
 #     Becomes the community string
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::trapcommunity {
   include 'snmpd'

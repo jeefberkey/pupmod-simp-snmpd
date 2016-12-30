@@ -1,19 +1,13 @@
-# == Define: snmpd::dlmod
-#
 # Add the ability to load a dynamic module.
 #
-# See snmpd.conf(5) 'Dynamically Loadable Modules'.
+# @see snmpd.conf(5) 'Dynamically Loadable Modules'.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   NAME from the man page.
 #
-# [*path*]
+# @param path
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::dlmod (
   $path
