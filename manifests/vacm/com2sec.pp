@@ -1,31 +1,24 @@
-# == Define: snmpd::vacm::com2sec
-#
 # Maps an SNMPv1 or SNMPv2c community string to a security name -  either  from  a  particular
 # range  of  source  addresses, or globally ("default").  A restricted source can either be a
 # specific  hostname  (or  address),  or  a   subnet   -   represented   as   IP/MASK   (e.g.
 # 10.10.10.0/255.255.255.0), or IP/BITS (e.g. 10.10.10.0/24), or the IPv6 equivalents
 #
-# See snmpd.conf(5) for more details.
+# @see snmpd.conf(5) for more details.
 #
-# == Notes
 #
-# - This is only used for SNMPv1 or SNMPv2
-# - Set $ipv6 to true to enable com2sec6
-# - Set $sockpath to enable com2secunix
-# - $sockpath overrides $ipv6
+# @note This is only used for SNMPv1 or SNMPv2
+# @note Set $ipv6 to true to enable com2sec6
+# @note Set $sockpath to enable com2secunix
+# @note $sockpath overrides $ipv6
 #
-# == Parameters
+# @param secname
+# @param community
+# @param context
+# @param source
+# @param ipv6
+# @param sockpath
 #
-# [*secname*]
-# [*community*]
-# [*context*]
-# [*source*]
-# [*ipv6*]
-# [*sockpath*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::com2sec (
   $secname,

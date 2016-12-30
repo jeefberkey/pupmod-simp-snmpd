@@ -1,17 +1,11 @@
-# == Define: snmpd::extension::perl::expression
-#
 # Add a PERL expression or script for snmpd to evaluate.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   Becomes part of the temp file path. Do not use '/' as part of $name.
 #
-# [*expression*]
+# @param expression
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpont.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::extension::perl::expression (
   $expression

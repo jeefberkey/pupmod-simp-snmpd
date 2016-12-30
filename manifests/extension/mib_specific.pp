@@ -1,22 +1,16 @@
-# == Define: snmpd::extension::mib_specific
+# @see snmpd.conf(5) 'MIB-Specific Extension Commands'
 #
-# See snmpd.conf(5) 'MIB-Specific Extension Commands'
-#
-# == Parameters
-#
-# [*name*]
+# @param name
 #   Becomes part of the temporary file path. Do not use '/' in $name.
 #
-# [*ext_type*]
+# @param ext_type
 #     Should be one of 'pass' or 'pass_persist'
 #
-# [*miboid*]
-# [*prog*]
-# [*priority*]
+# @param miboid
+# @param prog
+# @param priority
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::extension::mib_specific (
   $ext_type,

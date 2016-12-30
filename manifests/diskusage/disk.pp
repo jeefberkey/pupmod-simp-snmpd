@@ -1,24 +1,18 @@
-# == Define: snmpd::diskusage::disk
-#
 # Set up SNMP Disk Usage Monitoring.
 #
-# See snmpd.conf(5) 'Disk Usage Monitoring' for additional information.
+# @see snmpd.conf(5) 'Disk Usage Monitoring' for additional information.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   Translates to part of the temp file name. Do not add '/' to $name.
 #
-# [*disk_path*]
-# [*minspace*]
+# @param disk_path
+# @param minspace
 #   This overrides $minpercent.
 #
-# [*minpercent*]
+# @param minpercent
 #   Do not add the trailing '%' to this number.
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::diskusage::disk (
   $disk_path,

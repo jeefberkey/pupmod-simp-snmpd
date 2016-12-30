@@ -1,17 +1,11 @@
-# == Class: snmpd::diskusage::include_all_disks
-#
 # Set up disk usage monitoring, by percent, for all disks.
 #
-# See snmpd.conf(5) 'Disk Usage Monitoring' for additional information.
+# @see snmpd.conf(5) 'Disk Usage Monitoring' for additional information.
 #
-# == Parameters
-#
-# [*minpercent*]
+# @param minpercent
 #   Do not add the trailing '%' to this variable.
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::diskusage::include_all_disks (
   $minpercent

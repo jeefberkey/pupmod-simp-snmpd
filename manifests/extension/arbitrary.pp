@@ -1,14 +1,10 @@
-# == Define: snmpd::extension::arbitrary
+# @see snmpd.conf(5) 'Arbitrary Extension Commands' for more information.
 #
-# See snmpd.conf(5) 'Arbitrary Extension Commands' for more information.
-#
-# == Parameters
-#
-# [*name*]
+# @param name
 #   This becomes part of the temporary file path and will be used as NAME.
 #   Do not use '/' in the $name
 #
-# [*ext_type*]
+# @param ext_type
 #   The type of extension you want to enable, choices are:
 #     - exec
 #     - sh
@@ -16,13 +12,11 @@
 #     - extend
 #     - extendfix
 #
-# [*prog*]
-# [*args*]
-# [*miboid*]
+# @param prog
+# @param args
+# @param miboid
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::extension::arbitrary (
   $ext_type,

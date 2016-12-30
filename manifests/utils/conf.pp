@@ -1,70 +1,64 @@
-# == Class: snmpd::utils::conf
-#
 # Configure /etc/snmp.conf for snmp client utilities.
 #
-# See snmp.conf(5) for details on all variables.
+# @see snmp.conf(5) for details on all variables.
 # /usr/share/snmp/mibs is always prepended onto the mibdirs.
 # /usr/local/share/snmp/mibs is always appended to mibdirs.
 #
-# == Parameters
+# @param default_port
+# @param def_version
+# @param def_community
+# @param dump_packet
+# @param do_debugging
+# @param debug_tokens
+# @param sixteen_bit_ids
+# @param clientaddr
+# @param client_recv_buf
+# @param client_send_buf
+# @param no_range_check
+# @param no_token_warnings
+# @param reverse_encode_ber
+# @param def_security_name
+# @param def_security_level
+# @param def_passphrase
+# @param def_auth_passphrase
+# @param def_priv_passphrase
+# @param def_auth_type
+# @param def_priv_type
+# @param def_context
+# @param def_security_model
+# @param def_auth_master_key
+# @param def_auth_localized_key
+# @param def_priv_master_key
+# @param def_priv_localized_key
+# @param mibdirs
+# @param mibs
+# @param show_mib_errors
+# @param strict_comment_term
+# @param mib_allow_underline
+# @param mib_warning_level
+# @param log_timestamp
+# @param print_numeric_enums
+# @param print_numeric_oids
+# @param dont_breakdown_oids
+# @param escape_quotes
+# @param quick_printing
+# @param print_value_only
+# @param dont_print_units
+# @param numeric_timeticks
+# @param print_hex_text
+# @param hex_output_length
+# @param suffix_printing
+# @param oid_output_format
+# @param extended_index
+# @param no_display_hint
+# @param persistent_dir
+# @param no_persistent_load
+# @param no_persistent_save
+# @param temp_file_pattern
+# @param server_recv_buf
+# @param server_send_buf
 #
-# [*default_port*]
-# [*def_version*]
-# [*def_community*]
-# [*dump_packet*]
-# [*do_debugging*]
-# [*debug_tokens*]
-# [*sixteen_bit_ids*]
-# [*clientaddr*]
-# [*client_recv_buf*]
-# [*client_send_buf*]
-# [*no_range_check*]
-# [*no_token_warnings*]
-# [*reverse_encode_ber*]
-# [*def_security_name*]
-# [*def_security_level*]
-# [*def_passphrase*]
-# [*def_auth_passphrase*]
-# [*def_priv_passphrase*]
-# [*def_auth_type*]
-# [*def_priv_type*]
-# [*def_context*]
-# [*def_security_model*]
-# [*def_auth_master_key*]
-# [*def_auth_localized_key*]
-# [*def_priv_master_key*]
-# [*def_priv_localized_key*]
-# [*mibdirs*]
-# [*mibs*]
-# [*show_mib_errors*]
-# [*strict_comment_term*]
-# [*mib_allow_underline*]
-# [*mib_warning_level*]
-# [*log_timestamp*]
-# [*print_numeric_enums*]
-# [*print_numeric_oids*]
-# [*dont_breakdown_oids*]
-# [*escape_quotes*]
-# [*quick_printing*]
-# [*print_value_only*]
-# [*dont_print_units*]
-# [*numeric_timeticks*]
-# [*print_hex_text*]
-# [*hex_output_length*]
-# [*suffix_printing*]
-# [*oid_output_format*]
-# [*extended_index*]
-# [*no_display_hint*]
-# [*persistent_dir*]
-# [*no_persistent_load*]
-# [*no_persistent_save*]
-# [*temp_file_pattern*]
-# [*server_recv_buf*]
-# [*server_send_buf*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::utils::conf (
   $default_port = '',

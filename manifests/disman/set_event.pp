@@ -1,20 +1,14 @@
-# == Define: snmpd::disman::set_event
+# @see snmpd.conf(5) 'DisMan Event MIB' - setEvent for additional information.
 #
-# See snmpd.conf(5) 'DisMan Event MIB' - setEvent for additional information.
-#
-# == Parameters
-#
-# [*name*]
+# @param name
 #   This becomes ENAME from the man page.
 #
-# [*oid*]
-# [*value*]
-# [*dash_i*]
+# @param oid
+# @param value
+# @param dash_i
 #     Setting this to true will set -I
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::disman::set_event (
   $oid,

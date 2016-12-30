@@ -1,19 +1,13 @@
-# == Define: snmpd::disman::notification_event
+# @see snmpd.conf(5) 'DisMan Event MIB' for additional information.
 #
-# See snmpd.conf(5) 'DisMan Event MIB' for additional information.
-#
-# == Parameters
-#
-# [*name*]
+# @param name
 #    This translates to ENAME from the man page.
 #
-# [*notification*]
-# [*varbinds_options*]
+# @param notification
+# @param varbinds_options
 #   Must be fully defined including the -n, -i, or -o as appropriate.
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::disman::notification_event (
   $notification,

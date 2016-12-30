@@ -1,20 +1,14 @@
-# == Define: snmpd::vacm::view
-#
-# See snmpd.conf(5) for details.
+# @see snmpd.conf(5) for details.
 #
 # To set your views in a particular order, simply append a number to the
 # end of the $name.
 #
-# == Parameters
+# @param vname
+# @param oid
+# @param v_type
+# @param mask
 #
-# [*vname*]
-# [*oid*]
-# [*v_type*]
-# [*mask*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::view (
   $vname,

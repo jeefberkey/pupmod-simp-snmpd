@@ -1,22 +1,16 @@
-# == Define: snmpd::disman::sched::repeat
-#
 # Schedule a SET assignment to be run every $frequency seconds.
 #
-# See "DisMan Schedule MIB" in the snmpd.conf(5) man page for additional
+# @see "DisMan Schedule MIB" in the snmpd.conf(5) man page for additional
 # information.
 #
-# == Parameters
-#
-# [*name*]
+# @param name
 #   This becomes part of the temporary file name. Do not put a '/' in the $name!
 #
-# [*frequency*]
-# [*$oid*]
-# [*$value*]
+# @param frequency
+# @param $oid
+# @param $value
 #
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::disman::sched::repeat (
   $frequency,

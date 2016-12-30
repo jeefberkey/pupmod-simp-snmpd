@@ -1,18 +1,12 @@
-# == Class: snmpd::agentx::sub::conf
-#
 # Create the AgentX subagent.
 #
-# See snmpd.conf(5) AgentX Sub-Agents for additional information.
+# @see snmpd.conf(5) AgentX Sub-Agents for additional information.
 #
-# == Parameters
+# @param agentx_ping_interval
+# @param agentx_timeout
+# @param agentx_retries
 #
-# [*agentx_ping_interval*]
-# [*agentx_timeout*]
-# [*agentx_retries*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::agentx::sub::conf (
   $agentx_ping_interval,

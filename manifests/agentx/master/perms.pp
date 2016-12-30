@@ -1,19 +1,13 @@
-# == Class: snmpd::agentx::master::perms
-#
 # Set up the AgentX Sub-Agent permissions.
 #
-# See snmpd.conf(5) AgentX Sub-Agents for more information.
+# @see snmpd.conf(5) AgentX Sub-Agents for more information.
 #
-# == Parameters
+# @param sockperms
+# @param dirperms
+# @param user
+# @param group
 #
-# [*sockperms*]
-# [*dirperms*]
-# [*user*]
-# [*group*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::agentx::master::perms (
   $sockperms,

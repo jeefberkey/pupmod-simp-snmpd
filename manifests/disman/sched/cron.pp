@@ -1,23 +1,17 @@
-# == Define: snmpd::disman::sched::cron
-#
 # Schedule a periodic SET assignment.
 #
-# See "DisMan Schedule MIB" in the snmpd.conf(5) man page for additional
+# @see "DisMan Schedule MIB" in the snmpd.conf(5) man page for additional
 # information.
 #
-# == Parameters
+# @param oid
+# @param value
+# @param minute
+# @param hour
+# @param day
+# @param month
+# @param weekday
 #
-# [*oid*]
-# [*value*]
-# [*minute*]
-# [*hour*]
-# [*day*]
-# [*month*]
-# [*weekday*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::disman::sched::cron (
   $oid,

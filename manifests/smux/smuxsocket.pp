@@ -1,15 +1,9 @@
-# == Define: snmpd::smux::smuxsocket
+# @see snmpd.conf(5) SMUX Sub-Agents for more information.
 #
-# See snmpd.conf(5) SMUX Sub-Agents for more information.
+# @param ipv4_address
+# @param trusted_nets
 #
-# == Parameters
-#
-# [*ipv4_address*]
-# [*trusted_nets*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::smux::smuxsocket (
   $ipv4_address,

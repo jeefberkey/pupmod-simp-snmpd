@@ -1,18 +1,12 @@
-# == Define: snmpd::procmon
-#
 # Configure process monitoring.
 #
-# See snmpd.conf(5) 'Process Monitoring' for more information on this class.
+# @see snmpd.conf(5) 'Process Monitoring' for more information on this class.
 # In all defines $name is mapped to NAME from the man page.
 #
-# == Parameters
+# @param prog
+# @param args
 #
-# [*prog*]
-# [*args*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::procmon::procfix (
   $prog,

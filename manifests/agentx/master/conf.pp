@@ -1,18 +1,12 @@
-# == Class: snmpd::agentx::master::conf
-#
 # Configure the main segment of the AgentX sub-agents.
 #
-# See snmpd.conf(5) AgentX Sub-Agents for more information.
+# @see snmpd.conf(5) AgentX Sub-Agents for more information.
 #
-# == Parameters
+# @param enable
+# @param agentx_timeout
+# @param entx_retries
 #
-# [*enable*]
-# [*agentx_timeout*]
-# [*entx_retries*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::agentx::master::conf (
   $enable = true,

@@ -1,19 +1,14 @@
-# == Define: snmpd::vacm::authaccess
+# Sets up the VACM configuration for auth access.
+# @see smpd.conf(5) for more details.
 #
-# Sets up the VACM configuration for auth access. See smpd.conf(5) for more details.
+# @param types
+# @param group
+# @param view
+# @param model
+# @param level
+# @param context
 #
-# == Parameters
-#
-# [types*]
-# [group*]
-# [view*]
-# [model*]
-# [level*]
-# [context*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::authaccess (
   $types,

@@ -1,19 +1,14 @@
-# == Define: snmpd::vacm::authgroup
+# Sets up the authgroup piece of the VACM Configuration.
+# @see snmpd.conf(5) for more details.
 #
-# Sets up the authgroup piece of the VACM Configuration. See snmpd.conf(5) for more details.
+# @param types
+# @param group
+# @param model
+# @param level
+# @param oid
+# @param view
 #
-# == Parameters
-#
-# [*types*]
-# [*group*]
-# [*model*]
-# [*level*]
-# [*oid*]
-# [*view*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::authgroup (
   $types,

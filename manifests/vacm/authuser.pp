@@ -1,19 +1,14 @@
-# == Define: snmpd::vacm::authuser
+# Sets up the authuser piece of the VAMC Configuration.
+# @see snmpd.conf(5) for more details.
 #
-# Sets up the authuser piece of the VAMC Configuration. See snmpd.conf(5) for more details.
+# @param types
+# @param user
+# @param model
+# @param level
+# @param oid
+# @param view
 #
-# == Parameters
-#
-# [*types*]
-# [*user*]
-# [*model*]
-# [*level*]
-# [*oid*]
-# [*view*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::authuser (
   $types,

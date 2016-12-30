@@ -1,20 +1,14 @@
-# == Class: snmpd::disman::globals
-#
 # Configure the global DisMan Event MIB options.
 #
-# See snmpd.conf(5) 'DisMan Event MIB' for additional information.
+# @see snmpd.conf(5) 'DisMan Event MIB' for additional information.
 #
-# == Parameters
+# @param iquery_sec_name
+# @param agent_sec_name
+# @param strict_disman
+# @param link_up_down_notifications
+# @param default_monitors
 #
-# [*iquery_sec_name*]
-# [*agent_sec_name*]
-# [*strict_disman*]
-# [*link_up_down_notifications*]
-# [*default_monitors*]
-#
-# == Authors
-#
-# * Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
+# @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::disman::globals (
   $iquery_sec_name = '',
