@@ -8,9 +8,9 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::extension::perl::expression (
-  $expression
+  String $expression
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+ext.perl.exp.${name}":
     content => "perl ${expression}\n"

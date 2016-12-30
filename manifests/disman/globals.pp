@@ -11,15 +11,14 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::disman::globals (
-  $iquery_sec_name = '',
-  $agent_sec_name = '',
-  $strict_disman = false,
-  $link_up_down_notifications = '',
-  $default_monitors = ''
+  Optional[String] $iquery_sec_name            = undef,
+  Optional[String] $agent_sec_name             = undef,
+  Optional[String] $link_up_down_notifications = undef,
+  Optional[String] $default_monitors           = undef,
+  Boolean          $strict_disman              = false
 ) {
+
   simpcat_fragment { 'snmpd+disman.globals':
     content => template('snmpd/disman_globals.erb')
   }
-
-  validate_bool($strict_disman)
 }

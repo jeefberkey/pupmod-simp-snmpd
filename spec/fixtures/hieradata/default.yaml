@@ -6,7 +6,7 @@ snmpd::load::max5: '60'
 snmpd::load::max15: '70'
 snmpd::swap::min: '200'
 snmpd::agentx::master::perms::sockperms: '0755'
-snmpd::agentx::sub::conf::agentx_ping_interval: '2'
+snmpd::agentx::sub::conf::agentx_ping_interval: 2
 snmpd::diskusage::include_all_disks::minpercent: '60'
 snmpd::stock::server::monitorUser_auth_phrase: 'testPassFoo'
 snmpd::stock::server::monitorUser_priv_phrase: 'testPassBar'

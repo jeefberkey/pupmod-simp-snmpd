@@ -13,11 +13,11 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::disman::sched::repeat (
-  $frequency,
-  $oid,
-  $value
+  String $frequency,
+  String $oid,
+  String $value
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+disman.${name}.sched":
     content => "repeat ${frequency} ${oid} = ${value}\n"

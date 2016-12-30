@@ -10,10 +10,10 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::disman::notification_event (
-  $notification,
-  $varbinds_options = ''
+  String           $notification,
+  Optional[String] $varbinds_options = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+disman.${name}.ne":
     content => "notificationEvent ${name} ${notification} ${varbinds_options}\n"

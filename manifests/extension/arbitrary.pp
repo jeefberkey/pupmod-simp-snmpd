@@ -19,22 +19,14 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::extension::arbitrary (
-  $ext_type,
-  $prog,
-  $args,
-  $miboid = ''
+  String $prog,
+  String $args,
+  Snmpd::Extension::Arbitrary::ExtType $ext_type,
+  Optional[Enum['exec','sh','extend']] $miboid = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+ext.${name}.${ext_type}":
     content => template('snmpd/arbitrary_ext.erb')
   }
-
-  validate_array_member($ext_type, [
-    'exec',
-    'sh',
-    'execfix',
-    'extend',
-    'extendfix'
-  ])
 }

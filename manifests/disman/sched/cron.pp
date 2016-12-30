@@ -14,15 +14,15 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::disman::sched::cron (
-  $oid,
-  $value,
-  $minute = '*',
-  $hour = '*',
-  $day = '*',
-  $month = '*',
-  $weekday = '*'
+  String $oid,
+  String $value,
+  String $minute  = '*',
+  String $hour    = '*',
+  String $day     = '*',
+  String $month   = '*',
+  String $weekday = '*'
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+disman.${name}.cron":
     content => "cron ${minute} ${hour} ${day} ${month} ${weekday} ${oid} = ${value}\n"

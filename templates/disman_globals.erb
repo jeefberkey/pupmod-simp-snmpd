@@ -1,15 +1,15 @@
-<% if !@iquery_sec_name.empty? then -%>
+<% if !@iquery_sec_name.nil? then -%>
 iquerySecName <%= @iquery_sec_name %>
 <% end -%>
-<% if !@agent_sec_name.empty? then -%>
+<% if !@agent_sec_name.nil? then -%>
 agentSecName <%= @agent_sec_name %>
 <% end %>
 <% if @strict_disman then -%>
 strictDisman yes
 <% end -%>
-<% if !@link_up_down_notifications.empty? then -%>
+<% if !@link_up_down_notifications.nil? then -%>
 linkUpDownNotifications yes
 <% end -%>
-<% if !@default_monitors.empty? then -%>
+<% if !@default_monitors.nil? then -%>
 defaultMonitors yes
 <% end -%>

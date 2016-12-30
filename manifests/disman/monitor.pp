@@ -11,10 +11,10 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::disman::monitor (
-  $expression,
-  $options = ''
+  String           $expression,
+  Optional[String] $options = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+disman.${name}.monitor":
     content => "monitor ${options} ${name} ${expression}\n",

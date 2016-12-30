@@ -15,11 +15,11 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::diskusage::disk (
-  $disk_path,
-  $minspace = '',
-  $minpercent = ''
+  Stdlib::AbsolutePath $disk_path,
+  Optional[Integer]    $minspace   = undef,
+  Optional[Integer]    $minpercent = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.disks":
     content => template('snmpd/disk.erb')

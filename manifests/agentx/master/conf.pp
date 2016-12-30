@@ -9,19 +9,12 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::agentx::master::conf (
-  $enable = true,
-  $agentx_timeout = '',
-  $agentx_retries = ''
+  Boolean           $enable         = true,
+  Optional[Integer] $agentx_timeout = undef,
+  Optional[Integer] $agentx_retries = undef
 ) {
+
   simpcat_fragment { 'snmpd+master.global.agentX':
     content => template('snmpd/agentX.erb')
-  }
-
-  validate_bool($enable)
-  if !empty($agentx_timeout) {
-    validate_integer($agentx_timeout)
-  }
-  if !empty($agentx_retries) {
-    validate_integer($agentx_retries)
   }
 }

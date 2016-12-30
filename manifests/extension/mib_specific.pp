@@ -13,16 +13,14 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::extension::mib_specific (
-  $ext_type,
-  $miboid,
-  $prog,
-  $priority = ''
+  Snmpd::Extension::Mib_Specific::ExtType $ext_type,
+  String $miboid,
+  String $prog,
+  Optional[String] $priority = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+ext.${name}.${ext_type}":
     content => template('snmpd/mib_specific_ext.erb')
   }
-
-  validate_array_member($ext_type, ['pass','pass_persist'])
 }

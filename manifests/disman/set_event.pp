@@ -11,9 +11,9 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::disman::set_event (
-  $oid,
-  $value,
-  $dash_i = false
+  String  $oid,
+  String  $value,
+  Boolean $dash_i = false
 ) {
   include 'snmpd'
 
@@ -21,6 +21,4 @@ define snmpd::disman::set_event (
     content =>
       inline_template("setEvent <%= @name %> <% if @dash_i then -%>-I <% end -%><%= @oid %> = <%= @value %>\n")
   }
-
-  validate_bool($dash_i)
 }

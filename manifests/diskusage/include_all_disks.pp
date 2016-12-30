@@ -8,11 +8,11 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::diskusage::include_all_disks (
-  $minpercent
+  Integer $minpercent
 ) {
+
   simpcat_fragment { 'snmpd+all.disks':
     content => "includeAllDisks ${minpercent}%\n"
   }
 
-  validate_integer($minpercent)
 }

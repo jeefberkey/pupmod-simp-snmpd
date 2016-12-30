@@ -1,12 +1,8 @@
 <%
 lstr = @ext_type
 
-if !@miboid.empty? then
-    if [ "exec", "sh", "extend" ].include?(@ext_type) then
-        lstr = "#{lstr} #{@miboid}"
-    else
-        lstr = "#Malformed entry -> #{lstr}"
-    end
+if !@miboid.nil? then
+  lstr = "#{lstr} #{@miboid}"
 end
 
 lstr = "#{lstr} #{@name} #{@prog} #{@args}"

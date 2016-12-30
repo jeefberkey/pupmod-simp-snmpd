@@ -1,9 +1,9 @@
 <%
 lstr = "disk #{@disk_path}"
 
-if !@minspace.empty? then
+if !@minspace.nil? then
     lstr = "#{lstr} #{@minspace}"
-elsif !@minpercent.empty? then
+elsif !@minpercent.nil? then
     lstr = "#{lstr} #{@minpercent}%"
 end
 -%>

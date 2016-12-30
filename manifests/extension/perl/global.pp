@@ -8,9 +8,10 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::extension::perl::global (
-  $disable_perl = '',
-  $perl_init_file = ''
+  Boolean                        $disable_perl   = false,
+  Optional[Stdlib::AbsolutePath] $perl_init_file = undef
 ) {
+
   simpcat_fragment { 'snmpd+ext.perl.global':
     content => template('snmpd/perl_global.erb')
   }

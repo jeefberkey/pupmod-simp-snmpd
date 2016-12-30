@@ -1,14 +1,14 @@
 <%
 lstr = "agentXPerms #{@sockperms}"
 
-if !@dirperms.empty? then
+if !@dirperms.nil? then
     lstr += " #{@dirperms}"
 end
 
-if !@user.empty? then
+if !@user.nil? then
     lstr += " #{@user}"
 
-    if !@group.empty? then
+    if !@group.nil? then
         lstr += " #{@group}"
     end
 end

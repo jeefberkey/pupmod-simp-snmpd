@@ -10,10 +10,10 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::agentx::master::perms (
-  $sockperms,
-  $dirperms = '',
-  $user = '',
-  $group = ''
+  Simplib::Umask           $sockperms,
+  Optional[Simplib::Umask] $dirperms = undef,
+  Optional[String]         $user     = undef,
+  Optional[String]         $group    = undef
 ) {
 
   simpcat_fragment { 'snmpd+perms.agentX':
