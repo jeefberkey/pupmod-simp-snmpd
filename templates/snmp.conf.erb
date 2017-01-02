@@ -1,5 +1,5 @@
 # Client Options
-<% if !@default_port.empty? then -%>
+<% if !@default_port.nil? then -%>
 defaultPort <%= @default_port %>
 <% end -%>
 defVersion <%= @def_version %>
@@ -10,19 +10,19 @@ dumpPacket yes
 <% if @do_debugging then -%>
 doDebugging 1
 <% end -%>
-<% if !@debug_tokens.to_s.empty? then -%>
+<% if !@debug_tokens.nil? then -%>
 debugTokens <%= @debug_tokens.join(',') %>
 <% end -%>
 <% if @sixteen_bit_ids then -%>
 16bitIDs yes
 <% end -%>
-<% if !@clientaddr.empty? then -%>
+<% if !@clientaddr.nil? then -%>
 clientaddr <%= @clientaddr %>
 <% end -%>
-<% if !@client_recv_buf.empty? then -%>
+<% if !@client_recv_buf.nil? then -%>
 clientRecvBuf <%= @client_recv_buf %>
 <% end -%>
-<% if !@client_send_buf.empty? then -%>
+<% if !@client_send_buf.nil? then -%>
 clientSendBuf <%= @client_send_buf %>
 <% end -%>
 <% if @no_range_check then -%>
@@ -31,46 +31,45 @@ noRangeCheck yes
 <% if @no_token_warnings then -%>
 noTokenWarnings
 <% end -%>
-<% if !@reverse_encode_ber.empty? then -%>
+<% if !@reverse_encode_ber.nil? then -%>
 reverseEncodeBER <%= @reverse_encode_ber %>
 <% end -%>
-<% if !@def_security_name.empty? then -%>
+<% if !@def_security_name.nil? then -%>
 defSecurityName <%= @def_security_name %>
 <% end -%>
 defSecurityLevel <%= @def_security_level %>
-<% if !@def_passphrase.empty? then -%>
+<% if !@def_passphrase.nil? then -%>
 defPassphrase <%= @def_passphrase %>
 <% end -%>
-<% if !@def_auth_passphrase.empty? then -%>
+<% if !@def_auth_passphrase.nil? then -%>
 defAuthPassphrase <%= @def_auth_passphrase %>
 <% end -%>
-<% if !@def_priv_passphrase.empty? then -%>
+<% if !@def_priv_passphrase.nil? then -%>
 defPrivPassphrase <%= @def_priv_passphrase %>
 <% end -%>
 defAuthType <%= @def_auth_type %>
 defPrivType <%= @def_priv_type %>
-<% if !@def_context.empty? then -%>
+<% if !@def_context.nil? then -%>
 defContext <%= @def_context %>
 <% end -%>
-<% if !@def_security_model.empty? then -%>
+<% if !@def_security_model.nil? then -%>
 defSecurityModel <%= @def_security_model %>
 <% end -%>
-<% if !@def_auth_master_key.empty? then -%>
+<% if !@def_auth_master_key.nil? then -%>
 defAuthMasterKey <%= @def_auth_master_key %>
 <% end -%>
-<% if !@def_auth_localized_key.empty? then -%>
+<% if !@def_auth_localized_key.nil? then -%>
 defAuthLocalizedKey <%= @def_auth_localized_key %>
 <% end -%>
-<% if !@def_priv_master_key.empty? then -%>
+<% if !@def_priv_master_key.nil? then -%>
 defPrivMasterKey <%= @def_priv_master_key %>
 <% end -%>
-<% if !@def_priv_localized_key.empty? then -%>
+<% if !@def_priv_localized_key.nil? then -%>
 defPrivLocalizedKey <%= @def_priv_localized_key %>
 <% end -%>
 <%
 lmibdirs = [ '/usr/share/snmp/mibs' ]
-lmibdirs += @mibdirs
-lmibdirs.delete('')
+lmibdirs += @mibdirs if !@mibdirs.nil?
 lmibdirs.push('/usr/local/share/snmp/mibs')
 -%>
 mibdirs <%= lmibdirs.join(':') %>
@@ -78,13 +77,13 @@ mibs <%= @mibs.join(':') %>
 <% if @show_mib_errors then -%>
 showMibErrors yes
 <% end -%>
-<% if !@strict_comment_term.empty? then -%>
+<% if !@strict_comment_term.nil? then -%>
 strictCommentTerm <%= @strict_comment_term %>
 <% end -%>
 <% if !@mib_allow_underline then -%>
 mibAllowUnderline no
 <% end -%>
-<% if !@mib_warning_level.empty? then -%>
+<% if !@mib_warning_level.nil? then -%>
 mibWarningLevel <%= @mib_warning_level %>
 <% end -%>
 <% if @log_timestamp then -%>
@@ -117,13 +116,13 @@ numericTimeticks yes
 <% if @print_hex_text then -%>
 printHexText yes
 <% end -%>
-<% if !@hex_output_length.empty? then -%>
+<% if !@hex_output_length.nil? then -%>
 hexOutputLength <%= @hex_output_length %>
 <% end -%>
-<% if !@suffix_printing.empty? then -%>
+<% if !@suffix_printing.nil? then -%>
 suffixPrinting <%= @suffix_printing %>
 <% end -%>
-<% if !@oid_output_format.empty? then -%>
+<% if !@oid_output_format.nil? then -%>
 oidOutputFormat <%= @oid_output_format %>
 <% end -%>
 <% if @extended_index then -%>
@@ -133,7 +132,7 @@ extendedIndex yes
 noDisplayHint yes
 <% end -%>
 # Server Options
-<% if !@persistent_dir.empty? then -%>
+<% if !@persistent_dir.nil? then -%>
 persistentDir <%= @persistent_dir %>
 <% end -%>
 <% if @no_persistent_load then -%>
@@ -142,12 +141,12 @@ noPersistentLoad yes
 <% if @no_persistent_save then -%>
 noPersistentSave yes
 <% end -%>
-<% if !@temp_file_pattern.empty? then -%>
+<% if !@temp_file_pattern.nil? then -%>
 tempFilePattern <%= @temp_file_pattern %>
 <% end -%>
-<% if !@server_recv_buf.empty? then -%>
+<% if !@server_recv_buf.nil? then -%>
 serverRecvBuf <%= @server_recv_buf %>
 <% end -%>
-<% if !@server_send_buf.empty? then -%>
+<% if !@server_send_buf.nil? then -%>
 serverSendBuf <%= @server_send_buf %>
 <% end -%>

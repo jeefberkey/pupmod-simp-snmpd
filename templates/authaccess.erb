@@ -1,16 +1,16 @@
 <%
 lstr = "authaccess #{@types}"
 
-if !@model.empty? then
+if !@model.nil?
     lstr = "#{lstr} #{@model}"
 end
 
 lstr = "#{lstr} #{@group} #{@view}"
 
-if !@level.empty? then
+if !@level.nil?
     lstr = "#{lstr} #{@level}"
 
-    if !@context.empty? then
+    if !@context.nil?
         lstr = "#{lstr} #{@context}"
     end
 end

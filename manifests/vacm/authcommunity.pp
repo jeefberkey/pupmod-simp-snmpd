@@ -10,13 +10,13 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::authcommunity (
-  $types,
-  $community,
-  $source = '',
-  $oid = '',
-  $view = ''
+  String           $types,
+  String           $community,
+  Optional[String] $source = undef,
+  Optional[String] $oid    = undef,
+  Optional[String] $view   = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.authc":
     content => template('snmpd/authview.erb')

@@ -6,10 +6,10 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::smux::smuxpeer (
-  $oid,
-  $pass
+  String $oid,
+  String $pass
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+peer.${name}.smux":
     content => "smuxpeer ${oid} ${pass}\n"

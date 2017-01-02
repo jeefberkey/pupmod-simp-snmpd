@@ -6,12 +6,10 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::smux::smuxsocket (
-  $ipv4_address,
-  $firewall      = simplib::lookup('simp_options::firewall', { 'default_value' => false, 'value_type' => Boolean }),
-  $trusted_nets  = simplib::lookup('simp_options::trusted_nets', { 'default_value' => ['127.0.0.1', '::1'], 'value_type' => Array[String] })
+  Simplib::IP::V4  $ipv4_address,
+  Boolean          $firewall      = simplib::lookup('simp_options::firewall', { 'default_value' => false, 'value_type' => Boolean }),
+  Simplib::Netlist $trusted_nets  = simplib::lookup('simp_options::trusted_nets', { 'default_value' => ['127.0.0.1', '::1'], 'value_type' => Array[String] })
 ) {
-  validate_net_list($trusted_nets)
-
   include '::snmpd'
 
   simpcat_fragment { "snmpd+socket.${name}.smux":
@@ -20,9 +18,9 @@ define snmpd::smux::smuxsocket (
 
   if $firewall {
     include '::iptables'
-    iptables::add_tcp_stateful_listen { "smux_${name}":
+    iptables::listen::tcp_stateful { "smux_${name}":
       trusted_nets => $trusted_nets,
-      dports       => '199'
+      dports       => 199
     }
   }
 }

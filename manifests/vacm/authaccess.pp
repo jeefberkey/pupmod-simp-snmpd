@@ -11,14 +11,14 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::authaccess (
-  $types,
-  $group,
-  $view,
-  $model = '',
-  $level = '',
-  $context = ''
+  String           $types,
+  String           $group,
+  String           $view,
+  Optional[String] $model   = undef,
+  Optional[String] $level   = undef,
+  Optional[String] $context = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.autha":
     content => template('snmpd/authaccess.erb')

@@ -14,8 +14,8 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::createuser (
-  $auth_phrase,
-  $priv_phrase,
+  String $auth_phrase,
+  String $priv_phrase,
   $auth_type = 'SHA',
   $priv_type = 'AES',
   $engine_id = ''

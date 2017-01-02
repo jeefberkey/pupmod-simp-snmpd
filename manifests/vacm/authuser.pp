@@ -11,14 +11,14 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::authuser (
-  $types,
-  $user,
-  $model = '',
-  $level = '',
-  $oid = '',
-  $view = ''
+  String           $types,
+  String           $user,
+  Optional[String] $model  = undef,
+  Optional[String] $oid    = undef,
+  Optional[String] $view   = undef,
+  Optional[Enum['noauth','priv']] $level = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.authu":
     content => template('snmpd/authview.erb')

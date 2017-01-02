@@ -7,10 +7,8 @@
 #   Set to 2 -> disabled by default.
 #
 class snmpd::authtrapenable (
-  $enable = false
+  Boolean $enable = false
 ) {
-  validate_bool($enable)
-
   $l_enable = $enable ? {
     true    => '1',
     default => '2'

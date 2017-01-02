@@ -14,21 +14,13 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::group (
-  $group,
-  $secname,
-  $sec_model = 'usm'
+  String $group,
+  String $secname,
+  Snmpd::Vacm::Group::SecModel $sec_model = 'usm'
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.group":
     content => "group ${group} ${sec_model} ${secname}\n",
   }
-
-  validate_array_member($sec_model, [
-    'v1',
-    'v2c',
-    'usm',
-    'tsm',
-    'ksm'
-  ])
 }

@@ -10,9 +10,9 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::dlmod (
-  $path
+  Stdlib::AbsolutePath $path
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.module":
     content => "dlmod ${name} ${path}\n",

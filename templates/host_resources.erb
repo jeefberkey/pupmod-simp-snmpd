@@ -1,9 +1,9 @@
-<% if !@ignore_disk.empty? then -%>
+<% if !@ignore_disk.nil? then -%>
 ignoreDisk <%= @ignore_disk %>
 <% end -%>
-<% if !@skip_nfs_in_host_resources.empty? then -%>
+<% if !@skip_nfs_in_host_resources.nil? then -%>
 skipNFSInHostResources <%= @skip_nfs_in_host_resources %>
 <% end -%>
-<% if !@storage_use_nfs.empty? then -%>
+<% if !@storage_use_nfs.nil? then -%>
 storageUseNFS <%= @storage_use_nfs %>
 <% end -%>

@@ -4,12 +4,12 @@ lsource = @source
 
 if @ipv6 then
     lstr = "com2sec6"
-elsif not @sockpath.empty? then
+elsif not @sockpath.nil? then
     lstr = "com2secunix"
     lsource = @sockpath
 end
 
-if not @context.empty? then
+if not @context.nil? then
     lstr = "#{lstr} -Cn #{@context}"
 end
 

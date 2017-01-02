@@ -9,10 +9,10 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::procmon::proc (
-  $max = '',
-  $min = ''
+  Optional[Integer] $max = undef,
+  Optional[Integer] $min = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.proc":
     content => template('snmpd/proc.erb')

@@ -11,19 +11,19 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::view (
-  $vname,
-  $oid,
-  $v_type = 'included',
-  $mask = ''
+  String           $vname,
+  String           $oid,
+  String           $v_type = 'included',
+  Optional[String] $mask   = undef
 ) {
-  if empty($mask) {
+  if $mask {
     simpcat_fragment { "snmpd+${name}.view":
-      content => "view ${vname} ${v_type} ${oid}\n"
+      content => "view ${vname} ${v_type} ${oid} ${mask}\n",
     }
   }
   else {
     simpcat_fragment { "snmpd+${name}.view":
-      content => "view ${vname} ${v_type} ${oid} ${mask}\n",
+      content => "view ${vname} ${v_type} ${oid}\n"
     }
   }
 }

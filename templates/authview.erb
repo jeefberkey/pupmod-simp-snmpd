@@ -1,9 +1,9 @@
 <%
 lstr = ""
-if !@community.nil? then
+if !@community.nil?
     lstr = 'authcommunity'
     ltype = @community
-elsif !@user.nil? then
+elsif !@user.nil?
     lstr = 'authuser'
     ltype = @user
 else
@@ -12,23 +12,23 @@ else
 end
 lstr = "#{lstr} #{@types}"
 
-if !@model.nil? && !@model.empty? then
+if !@model.nil? && !@model.empty?
     lstr = "#{lstr} -s #{@model}"
 end
 
 lstr = "#{lstr} #{ltype}"
 
-if !@source.nil? && !@source.empty? then
+if !@source.nil? && !@source.empty?
     lstr = "#{lstr} #{@source}"
-elsif !@level.nil? && !@level.empty? then
+elsif !@level.nil? && !@level.empty?
     lstr = "#{lstr} #{@level}"
 end
 
-unless @oid.empty? then
+unless @oid.nil?
     lstr = "#{lstr} #{@oid}"
 end
 
-unless @view.empty? then
+unless @view.nil?
     lstr = "#{lstr} -V #{@view}"
 end
 -%>

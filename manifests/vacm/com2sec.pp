@@ -5,7 +5,6 @@
 #
 # @see snmpd.conf(5) for more details.
 #
-#
 # @note This is only used for SNMPv1 or SNMPv2
 # @note Set $ipv6 to true to enable com2sec6
 # @note Set $sockpath to enable com2secunix
@@ -21,18 +20,16 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::com2sec (
-  $secname,
-  $community,
-  $context = '',
-  $source = 'default',
-  $ipv6 = false,
-  $sockpath = ''
+  String           $secname,
+  String           $community,
+  Optional[String] $context  = undef,
+  String           $source   = 'default',
+  Boolean          $ipv6     = false,
+  Optional[String] $sockpath = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.com2sec":
     content => template('snmpd/com2sec.erb')
   }
-
-  validate_bool($ipv6)
 }

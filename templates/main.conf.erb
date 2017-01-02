@@ -1,7 +1,7 @@
-<% if !@agentgid.empty? then -%>
+<% if !@agentgid.nil? then -%>
 agentgroup snmp
 <% end -%>
-<% if !@agentuid.empty? then -%>
+<% if !@agentuid.nil? then -%>
 agentuser snmp
 <% end -%>
 <% if !@leave_pidfile.eql?('no') then -%>
@@ -9,13 +9,13 @@ leave_pidfile yes
 <% end -%>
 maxGetbulkRepeats <%= @max_get_bulk_repeats %>
 maxGetbulkResponses <%= @max_get_bulk_responses %>
-<% if !@engine_id.empty? then -%>
+<% if !@engine_id.nil? then -%>
 engineID <%= @engine_id %>
 <% end -%>
-<% if !@engine_id_type.empty? then -%>
+<% if !@engine_id_type.nil? then -%>
 engineIDType <%= @engine_id_type %>
 <% end -%>
-<% if !@engine_id_nic.empty? then -%>
+<% if !@engine_id_nic.nil? then -%>
 engineIDNic <%= @engine_id_nic %>
 <% end -%>
 <% if @dont_log_tcp_wrappers_connects then -%>

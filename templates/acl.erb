@@ -26,13 +26,13 @@ else
 
     largs = "#{largs} #{@community}"
 
-    if not @source.empty? then
+    if not @source.nil? then
         largs = "#{largs} #{@source}"
     end
 
 end
 
-if not @oid.empty? then
+if not @oid.nil? then
     largs = "#{largs} #{@oid}"
 end
 -%>

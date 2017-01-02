@@ -13,10 +13,10 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::informsink (
-  $community = '',
-  $port = ''
+  Optional[String]        $community = undef,
+  Optional[Simplib::Port] $port      = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.inform.sink":
     content => "informsink ${name} ${community} ${port}\n"

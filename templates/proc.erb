@@ -1,10 +1,10 @@
 <%
 lstr = "proc #{@name}"
 
-if !@max.empty? then
+if !@max.nil? then
     lstr = "#{lstr} #{@max}"
 
-    if !@min.empty? then
+    if !@min.nil? then
         lstr = "#{lstr} #{@min}"
     end
 end

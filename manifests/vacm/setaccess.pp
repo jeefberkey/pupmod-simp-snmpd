@@ -7,15 +7,15 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::setaccess (
-  $group,
-  $context,
-  $model,
-  $level,
-  $prefix,
-  $view,
-  $types
+  String $group,
+  String $context,
+  String $model,
+  String $level,
+  String $prefix,
+  String $view,
+  String $types
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.autha":
     content => "setaccess ${group} ${context} ${model} ${level} ${prefix} ${view} ${types}\n"

@@ -27,16 +27,13 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::communityacl (
-  $community,
-  $ro = true,
-  $source = '',
-  $oid = '',
-  $ipv6 = false
+  String           $community,
+  Boolean          $ro     = true,
+  Optional[String] $source = undef,
+  Optional[String] $oid    = undef,
+  Boolean          $ipv6   = false
 ) {
-  include 'snmpd'
-
-  validate_bool($ro)
-  validate_bool($ipv6)
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.comm":
     content => template('snmpd/acl.erb')

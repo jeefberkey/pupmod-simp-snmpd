@@ -11,24 +11,20 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd (
-  $rsync_source                   = "snmp_${::environment}/dlmod",
-  $rsync_server                   = simplib::lookup('simp_options::rsync::server',  { 'default_value' => '127.0.0.1', 'value_type' => String}),
-  $rsync_timeout                  = simplib::lookup('simp_options::rsync::timeout', { 'default_value' => '2', 'value_type' => String }),
-  $agentgid                       = '333',
-  $agentuid                       = '333',
-  $leave_pidfile                  = 'no',
-  $max_get_bulk_repeats           = '1024',
-  $max_get_bulk_responses         = '100',
-  $engine_id                      = '',
-  $engine_id_type                 = '',
-  $engine_id_nic                  = '',
-  $tcpwrappers                    = simplib::lookup('simp_options::tcpwrappers', { 'default_value' => false, 'value_type' => Boolean }),
-  $dont_log_tcp_wrappers_connects = false
+  String           $rsync_source                   = "snmp_${::environment}/dlmod",
+  Simplib::Host    $rsync_server                   = simplib::lookup('simp_options::rsync::server',  { 'default_value' => '127.0.0.1' }),
+  Integer          $rsync_timeout                  = simplib::lookup('simp_options::rsync::timeout', { 'default_value' => 2 }),
+  String           $agentgid                       = '333',
+  String           $agentuid                       = '333',
+  Enum['yes','no'] $leave_pidfile                  = 'no',
+  Integer          $max_get_bulk_repeats           = 1024,
+  Integer          $max_get_bulk_responses         = 100,
+  Optional[String] $engine_id                      = undef,
+  Optional[String] $engine_id_type                 = undef,
+  Optional[String] $engine_id_nic                  = undef,
+  Boolean          $tcpwrappers                    = simplib::lookup('simp_options::tcpwrappers', { 'default_value' => false, 'value_type' => Boolean }),
+  Boolean          $dont_log_tcp_wrappers_connects = false
 ){
-  validate_bool($dont_log_tcp_wrappers_connects)
-  validate_integer($agentgid)
-  validate_integer($agentuid)
-
   include '::rsync'
   include '::snmpd::utils'
 
@@ -158,11 +154,7 @@ class snmpd (
     content => template('snmpd/main.conf.erb')
   }
 
-  #TODO validate_integer() above fails on an empty $agentgid, so can't
-  # really get here.  But, when we refactor to use typed-parameters
-  # (e.g., Optional[Integer]) this logic can be applied with if
-  # $agentgid.
-  if !empty($agentgid) {
+  if !$agentgid {
     group { 'snmp':
       ensure    => 'present',
       gid       => $agentgid,
@@ -171,11 +163,7 @@ class snmpd (
     }
   }
 
-  #TODO validate_integer() above fails on an empty $agentuid, so can't
-  # really get here.  But, when we refactor to use typed-parameters
-  # (e.g., Optional[Integer]) this logic can be applied with if
-  # $agentuid.
-  if !empty($agentuid) {
+  if !$agentuid {
     user { 'snmp':
       ensure     => 'present',
       uid        => $agentuid,

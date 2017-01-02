@@ -11,18 +11,16 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::vacm::authgroup (
-  $types,
-  $group,
-  $model = '',
-  $level = '',
-  $oid = '',
-  $view = ''
+  String           $types,
+  String           $group,
+  Optional[String] $model  = undef,
+  Optional[String] $oid    = undef,
+  Optional[String] $view   = undef,
+  Optional[Enum['noauth','priv']] $level = undef
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.authg":
     content => template('snmpd/authview.erb')
   }
-
-  if !empty($level) { validate_array_member($level, ['noauth','priv']) }
 }

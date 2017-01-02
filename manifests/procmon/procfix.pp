@@ -9,10 +9,10 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 define snmpd::procmon::procfix (
-  $prog,
-  $args
+  String $prog,
+  String $args
 ) {
-  include 'snmpd'
+  include '::snmpd'
 
   simpcat_fragment { "snmpd+${name}.procfix":
     content => "procfix ${name} ${prog} ${args}\n"

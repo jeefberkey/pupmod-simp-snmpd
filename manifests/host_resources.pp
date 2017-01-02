@@ -7,9 +7,9 @@
 # @author Trevor Vaughan <mailto:tvaughan@onyxpoint.com>
 #
 class snmpd::host_resources (
-  $ignore_disk = '',
-  $skip_nfs_in_host_resources = '',
-  $storage_use_nfs = ''
+  Optional[String]       $ignore_disk                = undef,
+  Optional[Boolean]      $skip_nfs_in_host_resources = undef,
+  Optional[Integer[1,2]] $storage_use_nfs            = undef
 ) {
   simpcat_fragment { 'snmpd+info.host_resources':
     content => template('snmpd/host_resources.erb')

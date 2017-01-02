@@ -1,6 +1,7 @@
 ---
 fixtures:
   repositories:
+    concat: https://github.com/simp/puppetlabs-concat
     iptables: https://github.com/simp/pupmod-simp-iptables
     rsync: https://github.com/simp/pupmod-simp-rsync
     simpcat: https://github.com/simp/pupmod-simp-simpcat
